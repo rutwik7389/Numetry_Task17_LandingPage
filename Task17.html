@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Landing Page</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body styling */
+        body {
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navigation bar */
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff5a79;
+        }
+
+        /* Hero section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in-out;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        /* Button styling */
+        .cta-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background: #ff758c;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #ff5a79;
+            transform: scale(1.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 20px;
+            width: 80%;
+            max-width: 900px;
+        }
+
+        .about, .features, .contact {
+            background: white;
+            color: black;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        /* Features section */
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features ul li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* Contact */
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            background: #ff758c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .contact button:hover {
+            background: #ff5a79;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .cta-button {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+            section {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Our Website</h1>
+        <p>Your journey to innovation starts here.</p>
+        <button class="cta-button">Get Started</button>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We provide innovative solutions to make your business thrive. Our team is dedicated to creating the best user experiences with modern technology.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Our Features</h2>
+        <ul>
+            <li>🚀 Fast and Responsive</li>
+            <li>🎨 Beautiful UI Design</li>
+            <li>🔒 Secure and Reliable</li>
+            <li>📱 Mobile-Friendly</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</body>
+</html>
